@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Checkpoint 3</title>
+	  <link rel="stylesheet" href="css/checkpoint3.css">
+
+</head>
+<body>
+
+<button type="button" id="Bold" onclick="boldfunction()"> <b> Bold </b> </button>
+<button type="button" id="Italic" onclick="italicfunction()"> <i>Italic</i> </button>
+<button type="button" id="Underlined" onclick="underlinedfunction()"> <u> Underlined </u> </button>
+
+
+
+
+
+<select id="font" onchange="myFunction(this)" >
+  <option>Georgia</option>
+  <option>Palatino Linotype</option>
+  <option>Book Antiqua</option>
+  <option>Times New Roman</option>
+  <option>Arial</option>
+  <option>Helvetica</option>
+  <option>Arial Black</option>
+  <option>Impact</option>
+  <option>Lucida Sans Unicode</option>
+  <option>Tahoma</option>
+  <option>Verdana</option>
+  <option>Courier New</option>
+  <option>Lucida Console</option>
+</select>
+
+<select id="size" onchange="sizefunction(this)">
+  <option value="12px" >12</option>
+  <option value="20px" >20</option>
+  <option value="32px" >32</option>
+  <option value="48px" >48</option>
+</select>
+
+<br> <br> <br> <br>
+
+<textarea id="myTextarea" rows="10" cols="200"> Hello World </textarea> <br>
+<button type="button" id="Delete" onclick="myFunction1()">Delete</button>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script >
+
+function boldfunction() {$("#myTextarea").css("font-weight", "Bold");}
+function italicfunction() {$("#myTextarea").css("font-style", "Italic");}
+function underlinedfunction() {$("#myTextarea").css("text-decoration", "Underline");}
+
+
+function sizefunction(selectTag1) {
+    var listValue = selectTag1.options[selectTag1.selectedIndex].value;
+    // document.getElementById("myTextarea").style.fontSize = listValue;//
+    {$("#myTextarea").css("font-size", listValue);}
+}
+	function myFunction(selectTag) {
+     var listValue = selectTag.options[selectTag.selectedIndex].text; 
+    // document.getElementById("myTextarea").style.fontFamily = listValue; //
+    {$("#myTextarea").css("font-family", listValue);}
+}
+
+function myFunction1() {
+    document.getElementById("myTextarea").value="";
+}
+</script>
+</html>
